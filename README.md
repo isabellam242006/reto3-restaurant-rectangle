@@ -343,3 +343,30 @@ print("La factura de la orden 3 es:")
 orden3.aplicarDescuento()
 orden3.imprimirFactura()
 ```
+```mermaid
+classDiagram
+    MenuItem <|-- Entrada
+    MenuItem <|-- Sopa
+    MenuItem <|-- Postre
+    MenuItem <|-- Bebida
+    MenuItem <|-- Ensalada
+    MenuItem <|-- Pasta
+    MenuItem : +Nombre
+    MenuItem : +Precio
+    MenuItem : +Impuesto
+    MenuItem : +Propina
+    MenuItem : +calcularPrecio()
+    Entrada : +Tipo
+    Sopa: +Ingrediente_principal
+    Postre: +Tipo
+    Bebida: +Tipo
+    Ensalada: +Vinagreta
+    Pasta: +Tipo_pasta
+
+    Order: +Items
+    Order: +agregarItem()
+    Order: +CalcularTotal()
+    Order *-- MenuItem
+    Order : +imprimirFactura()
+    Order : +calcularDescuento()
+```
