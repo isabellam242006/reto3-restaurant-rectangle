@@ -257,7 +257,7 @@ class Order:
     def calcularTotal(self):
         total = 0
         for item in self.items:
-            total += item.calcularPrecio()   #Aquí se utiliza la función que se hereda de la clase MenuItem para calcular el precio
+            total += item.calcularPrecio()   #Aquí se utiliza la función de MenuItem para calcular el precio
         return total
 
     def imprimirFactura(self):
